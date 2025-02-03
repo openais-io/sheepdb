@@ -6,6 +6,10 @@
 
 SheepDB is a lightweight service that uses Google Spreadsheets as a storage backend. It provides both a CLI interface and an API server for managing your data.
 
+<p align="center">
+  <img src="assets/sheepdb.png" alt="SheepDB Screenshot" width="600">
+</p>
+
 ## Features
 
 - 🔄 Use Google Spreadsheets as a database
