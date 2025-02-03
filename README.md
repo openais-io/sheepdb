@@ -19,6 +19,8 @@ SheepDB is a lightweight service that uses Google Spreadsheets as a storage back
 - Google Cloud Project with enabled Google Sheets API
 - Google Service Account credentials
 
+For detailed instructions on setting up these prerequisites, please refer to our [Setup Guide](./HOW-TO.md).
+
 ## Installation
 
 You can download the latest release from [here](https://github.com/openais-io/sheepdb/releases).
@@ -29,7 +31,7 @@ Configure the required environment variables by either setting them directly or 
 
 ```bash
 GOOGLE_CLIENT_EMAIL=your-service-account@project.iam.gserviceaccount.com
-GOOGLE_PRIVATE_KEY=your-service-account-private-key
+GOOGLE_PRIVATE_KEY=your-service-account-private-key # You can get the value from the service-account.json file
 GOOGLE_SPREADSHEET_ID=your-spreadsheet-id
 API_KEY=your-api-key  # Required for API server
 ```
