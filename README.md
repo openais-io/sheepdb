@@ -81,12 +81,14 @@ sheepdb api-server start --port 9091
 
 The API server provides RESTful endpoints for interacting with your spreadsheet:
 
-- `GET /api/v1/sheets/:name` - Get sheet data
+- `GET /api/v1/sheets/:sheet_name` - Get sheet data
 - `POST /api/v1/sheets` - Create a new sheet
-- `DELETE /api/v1/sheets/:name` - Delete a sheet
-- `POST /api/v1/sheets/:name/rows` - Add a row to a sheet
+- `DELETE /api/v1/sheets/:sheet_name` - Delete a sheet
+- `POST /api/v1/sheets/:sheet_name/rows` - Add a row to a sheet
+- `DELETE /api/v1/sheets/:sheet_name/rows` - Delete rows from a sheet
+- `PUT /api/v1/sheets/:sheet_name/rows` - Update rows in a sheet
 
-API documentation is available at `/docs` when running the server.
+API documentation is available at `/api/docs` when running the server.
 
 ## Troubleshooting
 
