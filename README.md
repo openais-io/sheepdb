@@ -88,10 +88,6 @@ The API server provides RESTful endpoints for interacting with your spreadsheet:
 
 API documentation is available at `/docs` when running the server.
 
-## Version
-
-Current version: v0.3.0
-
 ## Troubleshooting
 
 If you encounter any issues, please open an issue on GitHub.
