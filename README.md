@@ -13,9 +13,8 @@ SheepDB is a lightweight service that uses Google Spreadsheets as a storage back
 ## Features
 
 - 🔄 Use Google Spreadsheets as a database
-- 🚀 Simple CLI interface for data management
-- 🌐 RESTful API server
-- 📊 Easy data querying and manipulation
+- 🌐 Full CRUD operations via HTTP endpoints
+- 📊 Rich query capabilities for data retrieval
 - 🔐 Secure authentication for API endpoints
 
 ## Prerequisites
@@ -42,53 +41,40 @@ API_KEY=your-api-key  # Required for API server
 
 **IMPORTANT:** After configuring your environment variables, remember to grant "Editor" access to your Google Spreadsheets for the email address specified in GOOGLE_CLIENT_EMAIL.
 
-## CLI Usage
+## Getting Started
 
-SheepDB provides several commands for managing your spreadsheet data.
-
-```bash
-sheepdb --help
-```
-
-### Sheet Management
+Run the API server using the following command:
 
 ```bash
-# Get sheet data
-sheepdb sheet get <sheet-name>
-
-# Create a new sheet
-sheepdb sheet create <sheet-name> --columns "column1,column2,column3"
-
-# Delete a sheet
-sheepdb sheet delete <sheet-name>
-
-# Add a row to a sheet
-sheepdb sheet add-row <sheet-name> --data "value1,value2,value3"
-
-# More detail
-sheepdb sheet --help
-```
-
-### API Server
-
-Start the API server:
-
-```bash
-sheepdb api-server start --port 9091
+sheepdb
 ```
 
 ## API Endpoints
 
-The API server provides RESTful endpoints for interacting with your spreadsheet:
+The API documentation is available at `/api/docs` when running the server.
 
-- `GET /api/v1/sheets/:sheet_name` - Get sheet data
-- `POST /api/v1/sheets` - Create a new sheet
-- `DELETE /api/v1/sheets/:sheet_name` - Delete a sheet
-- `POST /api/v1/sheets/:sheet_name/rows` - Add a row to a sheet
-- `DELETE /api/v1/sheets/:sheet_name/rows` - Delete rows from a sheet
-- `PUT /api/v1/sheets/:sheet_name/rows` - Update rows in a sheet
+### Filter Operations
 
-API documentation is available at `/api/docs` when running the server.
+SheepDB supports various filter operations:
+
+- **Simple Equality**: `{"field": value}`
+- **String Operations**:
+    - StartsWith: `{"field": {"startsWith": "prefix"}}`
+    - EndsWith: `{"field": {"endsWith": "suffix"}}`
+    - Contains: `{"field": {"contains": "substring"}}`
+- **Comparison Operations**:
+    - Greater Than: `{"field": {"gt": value}}`
+    - Greater Than or Equal: `{"field": {"gte": value}}`
+    - Less Than: `{"field": {"lt": value}}`
+    - Less Than or Equal: `{"field": {"lte": value}}`
+- **Array Operations**:
+    - In: `{"field": {"in": [value1, value2]}}`
+    - Not In: `{"field": {"notIn": [value1, value2]}}`
+    - Between: `{"field": {"between": [min, max]}}`
+    - Not Between: `{"field": {"notBetween": [min, max]}}`
+- **Null Operations**:
+    - Is Null: `{"field": {"isNull": true}}`
+    - Is Not Null: `{"field": {"isNotNull": true}}`
 
 ## Troubleshooting
 
